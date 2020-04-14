@@ -1,5 +1,5 @@
 use geo::algorithm::winding_order::Winding;
-use geo_types::{Coordinate, Geometry, GeometryCollection, LineString, MultiPolygon, Polygon};
+use geo::{Coordinate, Geometry, GeometryCollection, LineString, MultiPolygon, Polygon};
 use num_traits;
 
 /// This trait returns a new geo-types Polygon/Multipolygon that follows the OGC winding rules
@@ -83,7 +83,7 @@ fn normalized_polygon<T: num_traits::Float>(poly: &Polygon<T>) -> Polygon<T> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use geo_types::{line_string, point, polygon};
+    use geo::{line_string, point, polygon};
 
     #[test]
     fn does_not_change_good_polygon() {
