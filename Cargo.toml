@@ -1,0 +1,12 @@
+[package]
+name = "geo-normalized"
+version = "0.1.0"
+authors = ["Bronson Brown-deVost <bronsonbdevost@aim.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+geo = "0.13.0"
+geo-types = "0.5.0"
+num-traits = "0.2.11"
