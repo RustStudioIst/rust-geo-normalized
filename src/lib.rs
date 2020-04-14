@@ -2,6 +2,13 @@ use geo::algorithm::winding_order::Winding;
 use geo_types::{Coordinate, Geometry, GeometryCollection, LineString, MultiPolygon, Polygon};
 use num_traits;
 
+/// This trait returns a new geo-types Polygon/Multipolygon that follows the OGC winding rules
+///
+/// The rust geo and geo-types crates are not as strict as the OGC guidelines,
+/// and allow for polygons with inner and outer rings in any direction.  This
+/// trait returns a Polygon/Multipolygon where all outer rings are clockwise,
+/// and all inner rings are anti-clockwise.
+///
 pub trait Normalized<T: num_traits::Float> {
     fn normalized(&self) -> Self;
 }
