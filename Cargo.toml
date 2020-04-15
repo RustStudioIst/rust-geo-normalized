@@ -1,5 +1,6 @@
 [package]
 name = "geo-normalized"
+description = "A trait for producing a normalized Polygon/Multipolygon according to OCG winding rules"
 version = "0.1.0"
 authors = ["Bronson Brown-deVost <bronsonbdevost@aim.com>"]
 edition = "2018"
