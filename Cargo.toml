@@ -3,6 +3,12 @@ name = "geo-normalized"
 version = "0.1.0"
 authors = ["Bronson Brown-deVost <bronsonbdevost@aim.com>"]
 edition = "2018"
+license = "MIT"
+readme = "README.md"
+homepage = "https://gitlab.com/bronsonbdevost/rust-geo-normalized"
+repository = "https://gitlab.com/bronsonbdevost/rust-geo-normalized"
+keywords = ["geo", "OCG", "Polygon", "Multipolygon", "Geometry"]
+categories = ["graphics"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
