@@ -1,3 +1,30 @@
+# rust-geo-normalized2
+
+fork from https://gitlab.com/bronsonbdevost/rust-geo-normalized 
+
+`geo-normalized = "0.1.1"`
+
+## 更新依赖
+
+from:
+
+```toml
+geo = "0.12.2"
+num-traits = "0.2.11"
+```
+
+to:
+
+```toml
+# https://crates.io/crates/geo
+geo = "0.30.0"
+# Numeric traits for generic mathematics
+# https://crates.io/crates/num-traits
+num-traits = "0.2.19"
+```
+
+---
+
 # rust-geo-normalized
 
 Creates a new instance of the rust geo/geo-types Polygon/Multipolygon that follows the OGC winding rules. 

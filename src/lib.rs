@@ -1,5 +1,7 @@
 use geo::algorithm::winding_order::Winding;
-use geo::{Coordinate, Geometry, GeometryCollection, LineString, MultiPolygon, Polygon};
+use geo::{
+    CoordNum, Coordinate, GeoNum, Geometry, GeometryCollection, LineString, MultiPolygon, Polygon,
+};
 use num_traits;
 
 pub trait Normalized<T: num_traits::Float> {
@@ -14,6 +16,8 @@ pub trait Normalized<T: num_traits::Float> {
     ///
     /// ```
     /// // Anti-clockwise winding order for outer ring
+    /// use geo::polygon;
+    /// use geo_normalized::Normalized;
     /// let bad = polygon![
     ///         (x: 1.0, y: 1.0),
     ///         (x: 4.0, y: 1.0),
@@ -41,7 +45,7 @@ pub trait Normalized<T: num_traits::Float> {
 
 /** Geometry Collections */
 
-impl<T: num_traits::Float> Normalized<T> for GeometryCollection<T> {
+impl<T: num_traits::Float + CoordNum + GeoNum> Normalized<T> for GeometryCollection<T> {
     fn normalized(&self) -> Self {
         GeometryCollection(
             self.0
@@ -62,7 +66,7 @@ impl<T: num_traits::Float> Normalized<T> for GeometryCollection<T> {
 
 /** Polygons */
 
-impl<T: num_traits::Float> Normalized<T> for MultiPolygon<T> {
+impl<T: num_traits::Float + CoordNum + GeoNum> Normalized<T> for MultiPolygon<T> {
     fn normalized(&self) -> Self {
         MultiPolygon::from(
             self.0
@@ -73,7 +77,7 @@ impl<T: num_traits::Float> Normalized<T> for MultiPolygon<T> {
     }
 }
 
-impl<T: num_traits::Float> Normalized<T> for Polygon<T> {
+impl<T: num_traits::Float + CoordNum + GeoNum> Normalized<T> for Polygon<T> {
     fn normalized(&self) -> Self {
         normalized_polygon(self)
     }
@@ -82,7 +86,7 @@ impl<T: num_traits::Float> Normalized<T> for Polygon<T> {
 /// Return a new polygon where the exterior ring points are clockwise and interior ring points are
 /// counter-clockwise
 ///
-fn normalized_polygon<T: num_traits::Float>(poly: &Polygon<T>) -> Polygon<T> {
+fn normalized_polygon<T: num_traits::Float + CoordNum + GeoNum>(poly: &Polygon<T>) -> Polygon<T> {
     Polygon::new(
         LineString::from(
             poly.exterior()
@@ -109,7 +113,7 @@ fn normalized_polygon<T: num_traits::Float>(poly: &Polygon<T>) -> Polygon<T> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use geo::{line_string, point, polygon};
+    use geo::polygon;
 
     #[test]
     fn does_not_change_good_polygon() {
