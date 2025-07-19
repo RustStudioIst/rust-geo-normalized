@@ -1,13 +1,13 @@
 [package]
-name = "geo-normalized"
+name = "geo-normalized2"
 description = "A trait for producing a normalized Polygon/Multipolygon according to OCG winding rules"
-version = "0.1.1"
-authors = ["Bronson Brown-deVost <bronsonbdevost@aim.com>"]
+version = "0.2.0"
+authors = ["angcyo@126.com", "Bronson Brown-deVost <bronsonbdevost@aim.com>"]
 edition = "2018"
 license = "MIT"
 readme = "README.md"
-homepage = "https://gitlab.com/bronsonbdevost/rust-geo-normalized"
-repository = "https://gitlab.com/bronsonbdevost/rust-geo-normalized"
+homepage = "https://github.com/RustStudioIst/rust-geo-normalized"
+repository = "https://github.com/RustStudioIst/rust-geo-normalized"
 keywords = ["geo", "OCG", "Polygon", "Multipolygon", "Geometry"]
 categories = ["graphics"]
 
