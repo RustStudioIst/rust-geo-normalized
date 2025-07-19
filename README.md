@@ -1,6 +1,6 @@
 # rust-geo-normalized2
 
-[<img alt="crates.io" src="https://img.shields.io/crates/v/rust-geo-normalized2?style=for-the-badge&color=fc8d62&logo=rust" height="20">](https://crates.io/crates/rust-geo-normalized2)
+[<img alt="crates.io" src="https://img.shields.io/crates/v/geo-normalized2?style=for-the-badge&color=fc8d62&logo=rust" height="20">](https://crates.io/crates/rust-geo-normalized2)
 
 fork from https://gitlab.com/bronsonbdevost/rust-geo-normalized 
 
